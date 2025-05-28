@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import Sidebar from './component/sidebar/sidebar';
-import Dashboard from './component/Dashboard';
-import CalendarPanel from './component/calenderpanel';
+import Sidebar from './components/sidebar/sidebar';
+import Dashboard from './components/Dashboard';
+import CalendarPanel from './components/calendarpanel';
 
 
 
