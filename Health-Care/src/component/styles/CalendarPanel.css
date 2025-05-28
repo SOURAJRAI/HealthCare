@@ -1,0 +1,451 @@
+/*  Panel Container  */
+.calendar-panel-outer {
+  background-color: #f5f9ff;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 350px;
+  width: 40%;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+/*  User Row  */
+.calendar-user-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.calendar-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #eaf2ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-avatar img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.calendar-plus-btn {
+  background: #2d68fe;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/*  Calendar Panel  */
+.calendar-panel {
+  background: #f5f9ff;
+  padding: 0;
+  box-shadow: none;
+  margin-bottom: 0;
+  position: relative;
+}
+
+/*  Calendar Header  */
+.calendar-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.calendar-month {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: navy;
+}
+
+.calendar-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*  Days & Dates Rows  */
+.calendar-days-row,
+.calendar-dates-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  column-gap: 12px;
+  text-align: center;
+  position: relative;
+}
+
+.calendar-days-row {
+  margin-bottom: 8px;
+}
+
+.calendar-dates-row {
+  margin-bottom: 15px;
+}
+
+.calendar-day-name {
+  font-size: 13px;
+  color: navy;
+  font-weight: 500;
+  position: relative;
+  z-index: 2;
+}
+
+.calendar-date-num {
+  font-size: 15px;
+  font-weight: 600;
+  color: navy;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+.active-date {
+  background-color: #3c5ee7 !important;
+  color: white !important;
+  z-index: 3;
+}
+
+/*  Time Slots Grid  */
+.calendar-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  column-gap: 12px;
+  grid-template-rows: repeat(3, auto);
+  gap: 6px 12px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.calendar-slot {
+  font-size: 11px;
+  text-align: center;
+  padding: 3px 0;
+  color: navy;
+  border-radius: 3px;
+  position: relative;
+  z-index: 2;
+}
+
+.calendar-slot-empty {
+  background: none;
+  color: #aaa;
+}
+
+.calendar-slot-highlight {
+  background-color: #7b8cde;
+  color: white !important;
+  font-weight: 500;
+  padding: 2px 4px 3px 3px;
+  border-radius: 8px;
+}
+
+.calendar-slot.active-column.calendar-slot-highlight {
+  background-color: #354cb1;
+}
+
+.calendar-slot.active-column:not(.calendar-slot-highlight) {
+  font-weight: 500;
+}
+
+.calendar-slot.active-column.calendar-slot-empty {
+  background: none;
+  opacity: 0.8;
+}
+
+.inactive-column {
+  opacity: 0.6;
+}
+
+/*  Column Highlight (Tuesday)  */
+.calendar-panel::before {
+  content: '';
+  position: absolute;
+  top: 45px;
+  height: 140px;
+  width: 14.28%;
+  background-color: #d5dcfa;
+  left: 14%;
+  z-index: 0;
+  border-radius: 12px;
+}
+
+/*  Appointments Row  */
+.calendar-appointments-row {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.calendar-appointment-card {
+  padding: 16px;
+  border-radius: 22px;
+  color: white;
+}
+
+.dentist {
+  background-color: #354cb1;
+  flex: 4;
+}
+
+.physio {
+  background-color: #dee3fa;
+  color: navy;
+  flex: 6;
+}
+
+.card-text-column {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2px;
+}
+
+.calendar-appointment-title {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+  overflow: visible;
+  max-width: none;
+}
+
+.calendar-appointment-icon {
+  font-size: 22px;
+}
+
+.card-time-row {
+  font-size: 12px;
+  opacity: 0.9;
+  margin-bottom: 1px;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.card-doctor-row {
+  font-size: 11px;
+  opacity: 0.75;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+/*  Upcoming Schedule  */
+.calendar-upcoming {
+  margin-top: 10px;
+}
+
+.calendar-upcoming-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: navy;
+}
+
+.calendar-upcoming-group {
+  margin-bottom: 20px;
+}
+
+.calendar-upcoming-day {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+
+.calendar-upcoming-cards {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.calendar-upcoming-card {
+  background-color: #dee3fa;
+  color: navy;
+  border-radius: 22px;
+  padding: 15px;
+  flex: 1;
+  overflow: visible;
+}
+
+.upcoming-card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.upcoming-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: auto;
+  margin-right: 12px;
+}
+
+.upcoming-card-text span:first-child {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.upcoming-card-text span:last-child {
+  font-size: 12px;
+  color: #6c757d;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+/*  Calendar Selector  */
+.calendar-selector {
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+
+.selector-arrow {
+  font-size: 10px;
+  margin-left: 5px;
+}
+
+/*  Responsive Design  */
+@media (max-width: 992px) {
+  .calendar-panel-outer {
+    min-width: 0;
+    width: 100%;
+    padding: 12px;
+  }
+  .calendar-panel {
+    padding: 0;
+  }
+  .calendar-appointments-row,
+  .calendar-upcoming-cards {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .calendar-appointment-card,
+  .calendar-upcoming-card {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .calendar-panel-outer {
+    padding: 8px;
+    border-radius: 10px;
+  }
+  .calendar-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .calendar-days-row,
+  .calendar-dates-row,
+  .calendar-slots-grid {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 6px;
+  }
+  .calendar-day-name,
+  .calendar-date-num,
+  .calendar-slot {
+    font-size: 11px;
+  }
+  .calendar-day-name:nth-child(n+4),
+  .calendar-date-num:nth-child(n+4),
+  .calendar-slot:nth-child(n+4) {
+    display: none;
+  }
+  .calendar-appointments-row,
+  .calendar-upcoming-cards {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  .calendar-panel-outer {
+    padding: 4px;
+    border-radius: 6px;
+    min-width: 0;
+    width: 100%;
+  }
+  .calendar-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .calendar-month {
+    font-size: 13px;
+  }
+  .calendar-days-row,
+  .calendar-dates-row,
+  .calendar-slots-grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 4px;
+  }
+  .calendar-day-name,
+  .calendar-date-num,
+  .calendar-slot {
+    font-size: 10px;
+  }
+  .calendar-appointment-card,
+  .calendar-upcoming-card {
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 11px;
+  }
+  .calendar-upcoming-title {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+}
+
+/* Hide the calendar column highlight on small screens */
+@media (max-width: 768px) {
+  .calendar-panel::before {
+    display: none;
+  }
+}

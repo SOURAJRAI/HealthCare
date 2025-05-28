@@ -1,0 +1,359 @@
+/*  Dashboard Container  */
+.dashboard-container {
+  background-color: #fff;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  width: 40%;
+  max-width: 100%;
+}
+
+/*  Search Bar  */
+.search-container {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+}
+.search-bar {
+  width: 90%;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.search-icon, .notification-icon {
+  color: #51558f;
+}
+.search-icon { margin-right: 10px; font-size: 18px; }
+.search-input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-size: 14px;
+  color: #51558f;
+  outline: none;
+}
+.search-input::placeholder { color: #95a5a6; }
+
+/*  Dashboard Header  */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.dashboard-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #51558f;
+  margin: 0;
+}
+.subtext {
+  color: #51558f;
+  font-size: 14px;
+  margin: 4px 0 0 0;
+}
+
+/*  Main Content Layout  */
+.main-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/*  Anatomy Section  */
+.anatomy-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 16px;
+}
+.anatomy-card {
+  background-color: #f5f9ff;
+  border-radius: 16px;
+  padding: 10px;
+  height: 350px;
+  flex: 1;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.human-figure {
+  position: relative;
+  background-color: #f5f9ff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.anatomy-image {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/*  Tag Styles (Healthy Heart, Healthy Leg)  */
+.tag {
+  position: absolute;
+  padding: 6px 12px;
+  border-radius: 10px;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  z-index: 200;
+  opacity: 0.9;
+}
+.tag-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+}
+.heart-tag { background-color: #31359e; top: 75px; left: 240px; }
+.leg-tag { background-color: #02e2f2; bottom: 70px; right: 220px; }
+
+/*  Responsive Tag Positions  */
+@media (max-width: 1200px) {
+  .anatomy-section { flex-direction: column; }
+  .heart-tag {
+    top: 60px; left: 50%; transform: translateX(-50%);
+  }
+  .leg-tag {
+    bottom: 40px; left: 50%; right: auto; transform: translateX(-50%);
+  }
+  .health-indicators { flex-direction: row; flex-wrap: wrap; }
+  .health-card { min-width: calc(50% - 8px); }
+}
+@media (max-width: 900px) {
+  .anatomy-section { flex-direction: column; gap: 20px; }
+  .anatomy-card { height: 260px; }
+  .health-indicators { flex-direction: column; gap: 12px; width: 100%; }
+  .health-card { min-width: 0; width: 100%; }
+  .heart-tag {
+    top: 40px; left: 50%; transform: translateX(-50%);
+  }
+  .leg-tag {
+    bottom: 25px; left: 50%; right: auto; transform: translateX(-50%);
+  }
+}
+@media (max-width: 600px) {
+  .anatomy-section { gap: 14px; }
+  .anatomy-card { height: 180px; padding: 6px; }
+  .human-figure { height: 100%; }
+  .anatomy-image { height: 100%; max-width: 100%; }
+  .health-indicators { gap: 8px; }
+  .health-card { padding: 8px 6px; font-size: 11px; }
+  .heart-tag {
+    top: 20px; left: 50%; transform: translateX(-50%);
+    font-size: 11px; padding: 4px 8px;
+  }
+  .leg-tag {
+    bottom: 10px; left: 50%; right: auto; transform: translateX(-50%);
+    font-size: 11px; padding: 4px 8px;
+  }
+}
+
+/*  Health Indicators  */
+.health-indicators {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-left: 32px;
+  flex: none;
+}
+.health-card {
+  background-color: #f5f9ff;
+  border-radius: 12px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  min-height: 60px;
+  width: 100%;
+}
+.health-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.health-card-header h3 {
+  font-weight: 100;
+  font-size: 15px;
+}
+.icon-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+  font-size: 30px;
+  flex-shrink: 0;
+}
+.health-info h3 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+.date {
+  color: #95a5a6;
+  font-size: 9px;
+  margin: 0;
+  line-height: 1;
+}
+.progress-container {
+  width: 100%;
+  height: 6px;
+  background: #e0e7ef;
+  border-radius: 3px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+.progress-bar {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+.details-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #3c5ee7;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 8px;
+  margin-bottom: 0;
+  width: 100%;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.details-link:hover { color: #22327a; }
+
+/*  Scanner Overlay  */
+.scanner-overlay {
+  position: absolute;
+  pointer-events: none;
+}
+.scanner-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8);
+}
+.heart-scanner {
+  top: 80px;
+  left: 170px;
+}
+.heart-scanner .scanner-circle {
+  background-color: rgba(231, 76, 60, 0.3);
+  border: 1px solid #e74c3c;
+}
+.scanner-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #e74c3c;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.leg-scanner {
+  bottom: 75px;
+  left: 135px;
+}
+.leg-scanner .scanner-circle {
+  background-color: rgba(26, 188, 156, 0.3);
+  border: 1px solid #1abc9c;
+}
+
+/*  Calendar Grid Responsive  */
+@media (max-width: 768px) {
+  .health-card { min-width: 100%; }
+  .calendar-grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 480px) {
+  .calendar-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/*  Activity Section  */
+.activity-section {
+  background-color: #f5f9ff;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-top: 10px;
+}
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.activity-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+.activity-subtitle {
+  font-size: 11px;
+  color: #888;
+  margin: 0;
+}
+.activity-chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 70px;
+}
+.day-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.bars-container {
+  display: flex;
+  height: 40px;
+  align-items: flex-end;
+  margin-bottom: 4px;
+  gap: 2px;
+}
+.bar {
+  width: 4px;
+  border-radius: 2px;
+  margin: 0 1px;
+}
+.teal-bar { background-color: #20c997; }
+.blue-bar { background-color: #4361ee; }
+.tall { height: 32px; }
+.medium { height: 22px; }
+.short { height: 12px; }
+.day-label {
+  font-size: 10px;
+  color: #888;
+  margin-top: 2px;
+}

@@ -1,0 +1,108 @@
+/* Sidebar Container */
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background-color: #f5f7fa;
+  padding: 25px 0;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Logo Section */
+.logo-container {
+  padding: 0 25px 20px 25px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  margin: 0;
+}
+
+.logo-health {
+  color: #50e7ef;
+}
+
+.logo-care {
+  color: #2c3e50;
+}
+
+/* Menu Sections */
+.menu-section {
+  margin-bottom: 15px;
+  padding: 0 15px;
+}
+
+.bottom-section {
+  margin-top: auto;
+  margin-bottom: 30px;
+}
+
+.section-title {
+  color: #7f8c8d;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin: 12px 0 8px 12px;
+}
+
+/* Menu List & Items */
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  color: #757a7e;
+  padding: 10px 15px;
+  margin: 3px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.menu-item:hover {
+  color: #2c3e50;
+}
+
+.menu-item.active {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.menu-icon {
+  margin-right: 12px;
+  width: 18px;
+  height: 18px;
+  color: currentColor;
+}
+
+/* Responsive Example */
+@media (max-width: 700px) {
+  .sidebar {
+    width: 100vw;
+    height: auto;
+    flex-direction: row;
+    padding: 10px 0;
+  }
+  .logo-container {
+    padding: 0 10px 10px 10px;
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+  .menu-section {
+    padding: 0 5px;
+    margin-bottom: 8px;
+  }
+}
+

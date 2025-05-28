@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+
+.main-content {
+  margin-left: 20px;
+  flex: 1;
+  padding: 20px;
+}
