@@ -26,7 +26,7 @@ const HealthIndicators = () => {
           </div>
         </div>
       ))}
-      <a href="#" className="details-link">
+      <a className="details-link">
               Details <IoIosArrowRoundForward />
             </a>
     </div>
